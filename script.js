@@ -109,6 +109,12 @@ const translations = {
         'contact.lead': "I'm always open to conversations about cloud architecture, career opportunities, and interesting projects. Reach out any time.",
         'contact.linkedin': 'LinkedIn Profile',
 
+        'chat.title': "Ask Mahdi's AI",
+        'chat.subtitle': 'Powered by Azure OpenAI',
+        'chat.welcome': "Hi! I'm Mahdi's AI assistant. Ask me anything about his experience, skills, education, or career. I know everything on this page!",
+        'chat.placeholder': "Ask about Mahdi's experience...",
+        'chat.error': "Sorry, I couldn't process that. Please try again.",
+
         'footer': '\u00A9 2026 Syed Muhammad Jaffar Mahdi'
     },
 
@@ -217,6 +223,12 @@ const translations = {
         'contact.lead': 'Je suis toujours ouvert aux conversations sur l\u2019architecture cloud, les opportunit\u00E9s de carri\u00E8re et les projets int\u00E9ressants. N\u2019h\u00E9sitez pas \u00E0 me contacter.',
         'contact.linkedin': 'Profil LinkedIn',
 
+        'chat.title': "Demandez \u00E0 l'IA de Mahdi",
+        'chat.subtitle': 'Propuls\u00E9 par Azure OpenAI',
+        'chat.welcome': "Bonjour ! Je suis l'assistant IA de Mahdi. Posez-moi des questions sur son exp\u00E9rience, ses comp\u00E9tences, sa formation ou sa carri\u00E8re.",
+        'chat.placeholder': "Posez une question sur Mahdi...",
+        'chat.error': "D\u00E9sol\u00E9, je n'ai pas pu traiter cette demande. Veuillez r\u00E9essayer.",
+
         'footer': '\u00A9 2026 Syed Muhammad Jaffar Mahdi'
     }
 };
@@ -270,6 +282,12 @@ function setLanguage(lang) {
                 el.textContent = dict[key];
             }
         }
+    });
+
+    // Translate placeholders
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key] !== undefined) el.placeholder = dict[key];
     });
 }
 
@@ -428,6 +446,156 @@ function initPageFadeIn() {
     document.body.classList.remove('page-loading');
 }
 
+// ─── AI Chat Widget ───
+function initChat() {
+    const widget = document.getElementById('chatWidget');
+    const fab = document.getElementById('chatFab');
+    const panel = document.getElementById('chatPanel');
+    const form = document.getElementById('chatForm');
+    const input = document.getElementById('chatInput');
+    const messages = document.getElementById('chatMessages');
+    const clearBtn = document.getElementById('chatClear');
+    if (!widget || !fab) return;
+
+    // ── Configuration ──
+    // Replace with your Azure Function URL after deployment
+    const API_URL = 'https://mahdi-ai-chat.azurewebsites.net/api/chat';
+
+    // ── Resume context (RAG knowledge base) ──
+    const RESUME_CONTEXT = `You are Mahdi's AI assistant on his personal portfolio website. Answer questions about Mahdi based ONLY on the following information. Be friendly, concise, and professional. If asked something not covered below, say you only know what's on his website.
+
+ABOUT:
+Syed Muhammad Jaffar Mahdi is a Cloud Solution Architect Intern at Microsoft, based in Brussels, Belgium. He focuses on cloud infrastructure, governance, and resiliency, designing modern platforms that are secure, scalable, and dependable.
+
+EXPERIENCE:
+1. Cloud Solution Architect Intern at Microsoft (Feb 2026 - Present): Current role focused on cloud infrastructure, governance, and resiliency.
+2. Cloud Infrastructure & Deployment Associate at Allianz Trade (Sep-Dec 2025): Led endpoint modernization for 140+ users using Autopilot, Azure, and Intune. Strengthened access governance across ServiceNow and Active Directory. Coordinated cross-regional rollout with teams in UK, Netherlands, Romania.
+3. Technology Operations Associate at Bridgestone (Feb-May 2025): Supported enterprise endpoint modernization using SCCM. Automated update workflows and improved deployment stability. Optimized hybrid meeting environments. Used Excel reporting and scripting for asset tracking.
+4. Sports Analyst & Commentator at PTV Sports (Aug 2017 - Jun 2023): Live football analysis including coverage of the 2018 FIFA World Cup. Delivered broadcasts in English and Urdu.
+5. Television Presenter at Such TV (Jun 2018 - Oct 2021): Anchored 100+ live broadcasts on news and sports. Produced 50+ written news stories. Helped launch a flagship sports show.
+6. Policy & Digital Research Intern at National Assembly of Pakistan (Jul-Sep 2020): Supported EV policy proposal using Excel-based modeling. Worked on citizen engagement digitization initiatives.
+
+SKILLS:
+- Cloud & Infrastructure: Azure, M365, Intune, Autopilot, SCCM, PowerShell
+- Endpoint & Identity: Active Directory, Entra ID, ServiceNow, Windows 10/11
+- Security & Governance: Defender for Cloud, Sentinel, Compliance, Conditional Access
+- Web & Platform: HTML, CSS, JavaScript, SharePoint, Power Platform
+- Performance, UX & Analytics: Excel, Power BI, ClickShare, Logitech
+- Technical & Professional: Project Coordination, Documentation, Stakeholder Communication
+
+EDUCATION:
+- Master's Degree in Political Science (European & International Governance) at VUB Brussels
+- Bachelor's Degree in Political Science at UGent (Ghent University)
+
+CERTIFICATIONS:
+- Microsoft Certified: Azure Fundamentals (AZ-900)
+- CSRD Fundamentals (Corporate Sustainability Reporting Directive)
+
+LANGUAGES: English (Full Professional), French (Full Professional), Urdu (Native), Punjabi (Native), Persian (Native), Tajik (Native)
+
+CONTACT: muhammadjaffarmahdi@gmail.com | LinkedIn: linkedin.com/in/muhammadjaffarmahdi`;
+
+    let chatHistory = [];
+
+    // Toggle panel
+    fab.addEventListener('click', () => {
+        widget.classList.toggle('open');
+        if (widget.classList.contains('open')) {
+            setTimeout(() => input.focus(), 350);
+        }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && widget.classList.contains('open')) {
+            widget.classList.remove('open');
+        }
+    });
+
+    // Clear chat
+    clearBtn.addEventListener('click', () => {
+        chatHistory = [];
+        const lang = document.documentElement.lang || 'en';
+        const welcomeText = translations[lang]?.['chat.welcome'] || translations.en['chat.welcome'];
+        messages.innerHTML = `<div class="chat-msg chat-msg-ai"><div class="chat-msg-bubble">${welcomeText}</div></div>`;
+    });
+
+    // Add message to UI
+    function addMessage(text, isUser) {
+        const wrapper = document.createElement('div');
+        wrapper.className = `chat-msg ${isUser ? 'chat-msg-user' : 'chat-msg-ai'}`;
+        const bubble = document.createElement('div');
+        bubble.className = 'chat-msg-bubble';
+        bubble.textContent = text;
+        wrapper.appendChild(bubble);
+        messages.appendChild(wrapper);
+        messages.scrollTop = messages.scrollHeight;
+        return wrapper;
+    }
+
+    // Show typing indicator
+    function showTyping() {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'chat-msg chat-msg-ai';
+        wrapper.id = 'chatTyping';
+        wrapper.innerHTML = '<div class="chat-msg-bubble"><div class="chat-typing"><span></span><span></span><span></span></div></div>';
+        messages.appendChild(wrapper);
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+    function hideTyping() {
+        const el = document.getElementById('chatTyping');
+        if (el) el.remove();
+    }
+
+    // Send message
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const text = input.value.trim();
+        if (!text) return;
+
+        addMessage(text, true);
+        input.value = '';
+        input.disabled = true;
+        form.querySelector('.chat-send').disabled = true;
+
+        chatHistory.push({ role: 'user', content: text });
+        showTyping();
+
+        try {
+            const response = await fetch(API_URL, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    messages: chatHistory,
+                    systemPrompt: RESUME_CONTEXT
+                })
+            });
+
+            hideTyping();
+
+            if (!response.ok) throw new Error('API error');
+
+            const data = await response.json();
+            const reply = data.reply || data.choices?.[0]?.message?.content || 'Sorry, I could not generate a response.';
+
+            chatHistory.push({ role: 'assistant', content: reply });
+            addMessage(reply, false);
+        } catch (err) {
+            hideTyping();
+            const lang = document.documentElement.lang || 'en';
+            const errorText = translations[lang]?.['chat.error'] || translations.en['chat.error'];
+            addMessage(errorText, false);
+            // Remove failed user message from history so conversation stays clean
+            chatHistory.pop();
+        }
+
+        input.disabled = false;
+        form.querySelector('.chat-send').disabled = false;
+        input.focus();
+    });
+}
+
 // ─── Init ───
 document.addEventListener('DOMContentLoaded', () => {
     initPageFadeIn();
@@ -436,4 +604,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initStagger();
     initHeroAnimation();
     initBackToTop();
+    initChat();
 });

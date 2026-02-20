@@ -1,0 +1,9 @@
+{
+  "name": "mahdi-ai-chat-api",
+  "version": "1.0.0",
+  "description": "Azure Function backend for Mahdi's portfolio RAG chatbot",
+  "main": "chat/index.js",
+  "dependencies": {
+    "@azure/openai": "^1.0.0-beta.12"
+  }
+}
