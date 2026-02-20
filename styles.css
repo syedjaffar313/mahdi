@@ -61,6 +61,63 @@
 [data-theme="dark"] .exp-badge {
     background: var(--accent);
 }
+[data-theme="dark"] .btn-primary {
+    background: var(--accent); color: #fff;
+    border-color: var(--accent);
+}
+[data-theme="dark"] .btn-primary:hover {
+    background: #fff; color: var(--bg);
+    border-color: #fff;
+}
+[data-theme="dark"] .btn-outline {
+    border-color: #3a3a3a; color: var(--ink-2);
+}
+[data-theme="dark"] .btn-outline:hover {
+    border-color: var(--accent); color: var(--accent);
+}
+[data-theme="dark"] .nav-overlay {
+    background: rgba(0,0,0,.55);
+}
+[data-theme="dark"] .skill-card,
+[data-theme="dark"] .cert-card,
+[data-theme="dark"] .lang-card,
+[data-theme="dark"] .testimonial {
+    background: #1a1a1a;
+    border-color: #2e2e2e;
+}
+[data-theme="dark"] .highlight-card,
+[data-theme="dark"] .edu-card,
+[data-theme="dark"] .exp-current {
+    background: #1e1e1e;
+    border-color: #2e2e2e;
+}
+[data-theme="dark"] .contact-btn {
+    background: #1a1a1a;
+    border-color: #2e2e2e;
+}
+[data-theme="dark"] .back-to-top {
+    background: #1c1c1c;
+    border-color: #333;
+}
+[data-theme="dark"] .footer {
+    border-top-color: #2a2a2a;
+}
+[data-theme="dark"] .lang-bar {
+    background: #2a2a2a;
+}
+
+/* ─── Selection ─── */
+::selection {
+    background: var(--accent); color: #fff;
+}
+
+/* ─── Scrollbar (Chromium) ─── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb {
+    background: var(--border); border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--ink-4); }
 
 /* ─── Base ─── */
 html { scroll-behavior: smooth; }
@@ -68,6 +125,7 @@ body {
     font-family: var(--sans);
     color: var(--ink);
     background: var(--bg);
+    transition: background-color .4s ease, color .4s ease;
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -84,7 +142,7 @@ strong { font-weight: 600; }
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
 .container-narrow { max-width: var(--narrow); margin: 0 auto; padding: 0 28px; }
 .section { padding: 100px 0; }
-.section-tinted { background: var(--bg-tint); }
+.section-tinted { background: var(--bg-tint); transition: background .4s ease; }
 
 /* ─── Section label (editorial) ─── */
 .section-label {
@@ -106,7 +164,7 @@ strong { font-weight: 600; }
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid transparent;
-    transition: border-color var(--dur), box-shadow var(--dur);
+    transition: border-color var(--dur), box-shadow var(--dur), background .4s ease;
 }
 .navbar.scrolled {
     border-bottom-color: var(--border);
@@ -174,7 +232,7 @@ strong { font-weight: 600; }
     position: fixed; top: 0; left: -320px; width: 300px; height: 100vh;
     background: var(--bg); z-index: 999;
     padding: 100px 40px 40px;
-    transition: left var(--dur) var(--ease);
+    transition: left var(--dur) var(--ease), background .4s ease;
     box-shadow: var(--shadow-lg);
 }
 .nav-panel.open { left: 0; }
@@ -283,7 +341,7 @@ strong { font-weight: 600; }
 }
 .btn-primary:hover {
     background: var(--accent); border-color: var(--accent);
-    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,120,212,.2);
+    transform: translateY(-2px); box-shadow: 0 8px 24px rgba(77,166,255,.25);
 }
 
 .btn-outline {
@@ -329,7 +387,7 @@ strong { font-weight: 600; }
     border-radius: var(--radius);
     padding: 32px 28px;
     text-align: center;
-    transition: box-shadow var(--dur), transform var(--dur);
+    transition: box-shadow var(--dur), transform var(--dur), background .4s ease, border-color .4s ease;
 }
 .highlight-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
 .highlight-icon { font-size: 1.6rem; display: block; margin-bottom: 12px; }
@@ -353,7 +411,7 @@ strong { font-weight: 600; }
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 48px 44px 40px;
-    transition: box-shadow var(--dur), transform var(--dur);
+    transition: box-shadow var(--dur), transform var(--dur), background .4s ease, border-color .4s ease;
 }
 .testimonial:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 
@@ -406,7 +464,7 @@ strong { font-weight: 600; }
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 32px 28px;
-    transition: box-shadow var(--dur), transform var(--dur);
+    transition: box-shadow var(--dur), transform var(--dur), background .4s ease, border-color .4s ease;
 }
 .skill-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .skill-card h3 {
@@ -507,7 +565,7 @@ strong { font-weight: 600; }
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 40px 28px;
-    transition: box-shadow var(--dur), transform var(--dur);
+    transition: box-shadow var(--dur), transform var(--dur), background .4s ease, border-color .4s ease;
 }
 .cert-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
 
@@ -519,7 +577,7 @@ strong { font-weight: 600; }
 }
 .cert-badge-btn:hover {
     transform: scale(1.08);
-    box-shadow: 0 6px 24px rgba(0,120,212,.15);
+    box-shadow: 0 6px 24px rgba(77,166,255,.2);
 }
 .cert-img {
     width: 100px; height: 100px; object-fit: contain; border-radius: 50%;
@@ -542,7 +600,7 @@ strong { font-weight: 600; }
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 36px 28px;
-    transition: box-shadow var(--dur), transform var(--dur);
+    transition: box-shadow var(--dur), transform var(--dur), background .4s ease, border-color .4s ease;
 }
 .edu-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
 .edu-type {
@@ -570,7 +628,7 @@ strong { font-weight: 600; }
     border: 1px solid var(--border);
     border-radius: var(--radius);
     padding: 24px 20px;
-    transition: box-shadow var(--dur), transform var(--dur);
+    transition: box-shadow var(--dur), transform var(--dur), background .4s ease, border-color .4s ease;
 }
 .lang-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .lang-card h3 { font-family: var(--serif); font-size: 1rem; font-weight: 600; margin-bottom: 2px; }
@@ -602,7 +660,7 @@ strong { font-weight: 600; }
     border: 1px solid var(--border);
     background: var(--bg-tint);
     color: var(--ink); font-size: .9rem; font-weight: 500;
-    transition: all var(--dur) var(--ease);
+    transition: all var(--dur) var(--ease), background .4s ease;
 }
 .contact-btn:hover {
     border-color: var(--accent); color: var(--accent);
