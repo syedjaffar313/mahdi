@@ -1,0 +1,107 @@
+// ============================================
+// SYED MUHAMMAD JAFFAR MAHDI — SITE SCRIPTS
+// ============================================
+
+// ─── Navbar scroll effect ───
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+});
+
+// ─── Mobile menu toggle ───
+const navToggle = document.getElementById('navToggle');
+const navLinks  = document.getElementById('navLinks');
+
+navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.classList.toggle('active');
+    navToggle.setAttribute('aria-expanded', isOpen);
+});
+
+// Close mobile menu when a link is clicked
+navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.classList.remove('active');
+        navToggle.setAttribute('aria-expanded', 'false');
+    });
+});
+
+// ─── Active nav link on scroll ───
+const sections = document.querySelectorAll('section[id]');
+
+function highlightNav() {
+    const scrollY = window.scrollY + 120;
+    sections.forEach(section => {
+        const top    = section.offsetTop;
+        const height = section.offsetHeight;
+        const id     = section.getAttribute('id');
+        const link   = document.querySelector(`.nav-links a[href="#${id}"]`);
+        if (link) {
+            link.classList.toggle('active', scrollY >= top && scrollY < top + height);
+        }
+    });
+}
+window.addEventListener('scroll', highlightNav);
+
+// ─── Smooth scroll for anchor links ───
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+});
+
+// ─── Scroll reveal animations ───
+function initReveal() {
+    const items = document.querySelectorAll(
+        '.sidebar-card, .skill-group, .timeline-entry, .cert-card, .edu-card, .lang-card, .contact-tile'
+    );
+    items.forEach(el => el.classList.add('reveal'));
+
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.12 }
+    );
+    items.forEach(el => observer.observe(el));
+}
+
+// ─── Animate language bars on scroll ───
+function initLanguageBars() {
+    const bars = document.querySelectorAll('.lang-fill');
+    const observer = new IntersectionObserver(
+        entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = entry.target;
+                    // Read the inline style width and apply it (CSS starts at 0)
+                    const targetWidth = target.style.width;
+                    target.style.width = '0%';
+                    requestAnimationFrame(() => {
+                        requestAnimationFrame(() => {
+                            target.style.width = targetWidth;
+                        });
+                    });
+                    observer.unobserve(target);
+                }
+            });
+        },
+        { threshold: 0.3 }
+    );
+    bars.forEach(bar => observer.observe(bar));
+}
+
+// ─── Init on DOM ready ───
+document.addEventListener('DOMContentLoaded', () => {
+    highlightNav();
+    initReveal();
+    initLanguageBars();
+});

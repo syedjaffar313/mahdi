@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Syed Muhammad Jaffar Mahdi — Cloud Solution Architect Intern at Microsoft. Cloud infrastructure, governance, and resiliency.">
+    <title>Syed Muhammad Jaffar Mahdi | Cloud Solution Architect</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Google Fonts — Inter for clean, modern Microsoft-style typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="Home">Mahdi Syed Muhammad Jaffar</a>
+
+            <!-- Mobile hamburger toggle -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-links" id="navLinks" role="list">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#languages">Languages</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <p class="hero-label">Hello, I'm</p>
+            <h1 class="hero-name">Syed Muhammad<br>Jaffar Mahdi</h1>
+            <p class="hero-role">Cloud Solution Architect Intern&nbsp;&nbsp;<span class="hero-at">@&nbsp;Microsoft</span></p>
+            <p class="hero-location">
+                <!-- Location icon (inline SVG keeps it dependency-free) -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Brussels / Zaventem, Belgium
+            </p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="https://www.linkedin.com/in/muhammadjaffarmahdi" target="_blank" rel="noopener" class="btn btn-ghost">
+                    <!-- LinkedIn icon -->
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+
+        <!-- Profile photo -->
+        <div class="hero-visual">
+            <div class="hero-ring">
+                <img src="csrd.jpg" alt="Syed Muhammad Jaffar Mahdi" class="hero-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+        <div class="container">
+            <h2 class="section-heading">About Me</h2>
+            <div class="about-layout">
+                <div class="about-prose">
+                    <p>
+                        I'm a <strong>Cloud Solution Architect Intern at Microsoft</strong>, with a strong 
+                        interest in cloud infrastructure, governance, and resiliency. My background spans 
+                        enterprise IT, endpoint modernization, and public-sector policy research.
+                    </p>
+                    <p>
+                        Before entering tech, I worked as a <strong>television presenter and sports analyst</strong>, 
+                        covering events like the 2018 FIFA World Cup. That experience gave me a unique ability 
+                        to communicate complex topics clearly to diverse audiences — a skill I bring to every 
+                        customer engagement and technical presentation.
+                    </p>
+                    <p>
+                        I'm passionate about helping organizations modernize their infrastructure, strengthen 
+                        their security posture, and make confident decisions on their cloud journey.
+                    </p>
+                </div>
+                <aside class="about-sidebar">
+                    <div class="sidebar-card">
+                        <span class="sidebar-icon" aria-hidden="true">&#9729;</span>
+                        <h3>Focus Area</h3>
+                        <p>Cloud Infrastructure &amp; Governance</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <span class="sidebar-icon" aria-hidden="true">&#127891;</span>
+                        <h3>Education</h3>
+                        <p>MSc &amp; BSc Political Science — VUB &amp; UGent</p>
+                    </div>
+                    <div class="sidebar-card">
+                        <span class="sidebar-icon" aria-hidden="true">&#127758;</span>
+                        <h3>Languages</h3>
+                        <p>6 languages — English, French, Urdu, Punjabi, Persian, Tajik</p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SKILLS ===== -->
+    <section class="section section-alt" id="skills">
+        <div class="container">
+            <h2 class="section-heading">Skills &amp; Technologies</h2>
+            <div class="skills-grid">
+                <!-- Cloud & Infrastructure -->
+                <div class="skill-group">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"/></svg>
+                        Cloud &amp; Infrastructure
+                    </h3>
+                    <div class="tags">
+                        <span class="tag">Microsoft Azure</span>
+                        <span class="tag">Cloud Infrastructure</span>
+                        <span class="tag">Azure Fundamentals</span>
+                        <span class="tag">Resource Groups &amp; Subscriptions</span>
+                        <span class="tag">Azure Networking (VNet, NSG)</span>
+                        <span class="tag">Azure Landing Zones</span>
+                        <span class="tag">Azure Cost Management</span>
+                        <span class="tag">Azure Monitor &amp; Logs</span>
+                    </div>
+                </div>
+                <!-- Endpoint & Identity -->
+                <div class="skill-group">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+                        Endpoint &amp; Identity
+                    </h3>
+                    <div class="tags">
+                        <span class="tag">Microsoft Intune</span>
+                        <span class="tag">Autopilot</span>
+                        <span class="tag">SCCM</span>
+                        <span class="tag">Endpoint Modernization</span>
+                        <span class="tag">Access Governance</span>
+                        <span class="tag">Microsoft Entra ID</span>
+                        <span class="tag">Conditional Access</span>
+                        <span class="tag">Device Compliance Policies</span>
+                        <span class="tag">Identity Lifecycle (JML)</span>
+                        <span class="tag">RBAC Fundamentals</span>
+                    </div>
+                </div>
+                <!-- Security & Governance -->
+                <div class="skill-group">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        Security &amp; Governance
+                    </h3>
+                    <div class="tags">
+                        <span class="tag">Identity &amp; Security Fundamentals</span>
+                        <span class="tag">Active Directory</span>
+                        <span class="tag">ServiceNow</span>
+                        <span class="tag">Security Posture Awareness</span>
+                        <span class="tag">Defender for Cloud</span>
+                        <span class="tag">Zero Trust Principles</span>
+                        <span class="tag">Azure Policies &amp; Access Control</span>
+                        <span class="tag">Compliance (GDPR, EU)</span>
+                    </div>
+                </div>
+                <!-- Web / Platform Skills -->
+                <div class="skill-group">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                        Web &amp; Platform
+                    </h3>
+                    <div class="tags">
+                        <span class="tag">Static Website Hosting</span>
+                        <span class="tag">Git &amp; GitHub</span>
+                        <span class="tag">GitHub Pages</span>
+                        <span class="tag">Azure Static Web Apps</span>
+                        <span class="tag">CI/CD (GitHub Actions)</span>
+                    </div>
+                </div>
+                <!-- Performance, UX & Analytics -->
+                <div class="skill-group">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        Performance, UX &amp; Analytics
+                    </h3>
+                    <div class="tags">
+                        <span class="tag">Web Performance</span>
+                        <span class="tag">Lighthouse Audits</span>
+                        <span class="tag">Core Web Vitals</span>
+                        <span class="tag">Microsoft Clarity</span>
+                        <span class="tag">Accessibility (a11y)</span>
+                    </div>
+                </div>
+                <!-- Technical & Professional -->
+                <div class="skill-group">
+                    <h3>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                        Technical &amp; Professional
+                    </h3>
+                    <div class="tags">
+                        <span class="tag">Technical Documentation</span>
+                        <span class="tag">Stakeholder Communication</span>
+                        <span class="tag">Customer-Facing Communication</span>
+                        <span class="tag">Solution Storytelling</span>
+                        <span class="tag">Requirements Gathering</span>
+                        <span class="tag">Excel Reporting</span>
+                        <span class="tag">Light Scripting</span>
+                        <span class="tag">Live Broadcasting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE ===== -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-heading">Experience</h2>
+            <div class="timeline">
+
+                <!-- 1 — Microsoft -->
+                <article class="timeline-entry">
+                    <div class="timeline-marker current" aria-hidden="true"></div>
+                    <div class="timeline-card">
+                        <header class="timeline-top">
+                            <h3>Cloud Solution Architect Intern</h3>
+                            <span class="badge badge-current">Current</span>
+                        </header>
+                        <p class="timeline-org">Microsoft</p>
+                        <p class="timeline-meta">February 2026 – Present &middot; Zaventem, Belgium</p>
+                    </div>
+                </article>
+
+                <!-- 2 — Allianz Trade -->
+                <article class="timeline-entry">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-card">
+                        <header class="timeline-top">
+                            <h3>Cloud Infrastructure &amp; Deployment Associate</h3>
+                        </header>
+                        <p class="timeline-org">Allianz Trade</p>
+                        <p class="timeline-meta">September 2025 – December 2025 &middot; Brussels, Belgium</p>
+                        <ul class="timeline-list">
+                            <li>Led endpoint modernization for 140+ users using Autopilot, Azure, and Intune</li>
+                            <li>Strengthened access governance across ServiceNow and Active Directory</li>
+                            <li>Coordinated cross-regional rollout with teams in the UK, Netherlands, and Romania</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 3 — Bridgestone EMEA -->
+                <article class="timeline-entry">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-card">
+                        <header class="timeline-top">
+                            <h3>Technology Operations Associate</h3>
+                        </header>
+                        <p class="timeline-org">Bridgestone EMEA</p>
+                        <p class="timeline-meta">February 2025 – May 2025 &middot; Zaventem, Belgium</p>
+                        <ul class="timeline-list">
+                            <li>Supported enterprise endpoint modernization using SCCM</li>
+                            <li>Automated update workflows and improved deployment stability</li>
+                            <li>Optimized hybrid meeting environments (ClickShare, Logitech)</li>
+                            <li>Used Excel reporting and scripting for asset and deployment tracking</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 4 — PTV -->
+                <article class="timeline-entry">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-card">
+                        <header class="timeline-top">
+                            <h3>Sports Analyst &amp; Commentator</h3>
+                        </header>
+                        <p class="timeline-org">Pakistan Television Corporation</p>
+                        <p class="timeline-meta">August 2017 – June 2023</p>
+                        <ul class="timeline-list">
+                            <li>Live football analysis including coverage of the 2018 FIFA World Cup</li>
+                            <li>Delivered broadcasts in English and Urdu to national audiences</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 5 — SUCH TV -->
+                <article class="timeline-entry">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-card">
+                        <header class="timeline-top">
+                            <h3>Television Presenter</h3>
+                        </header>
+                        <p class="timeline-org">SUCH TV</p>
+                        <p class="timeline-meta">June 2018 – October 2021</p>
+                        <ul class="timeline-list">
+                            <li>Anchored 100+ live broadcasts on news and sports</li>
+                            <li>Produced 50+ written news stories</li>
+                            <li>Helped launch a flagship sports show</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <!-- 6 — National Assembly -->
+                <article class="timeline-entry">
+                    <div class="timeline-marker" aria-hidden="true"></div>
+                    <div class="timeline-card">
+                        <header class="timeline-top">
+                            <h3>Policy &amp; Digital Research Intern</h3>
+                        </header>
+                        <p class="timeline-org">National Assembly of Pakistan</p>
+                        <p class="timeline-meta">July 2021 – September 2021</p>
+                        <ul class="timeline-list">
+                            <li>Supported EV policy proposal using Excel-based modeling</li>
+                            <li>Worked on citizen engagement digitization initiatives</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div><!-- /.timeline -->
+        </div>
+    </section>
+
+    <!-- ===== CERTIFICATIONS ===== -->
+    <section class="section section-alt" id="certifications">
+        <div class="container">
+            <h2 class="section-heading">Certifications</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <button class="cert-badge-link" onclick="document.getElementById('certModal').classList.add('open')" title="View AZ-900 Certificate">
+                        <img src="az900.png" alt="Microsoft Azure Fundamentals AZ-900 Badge" class="cert-badge-img">
+                    </button>
+                    <h3>Azure Fundamentals</h3>
+                    <p class="cert-code">AZ-900</p>
+                    <p class="cert-issuer">Microsoft Certified</p>
+                </div>
+                <div class="cert-card">
+                    <button class="cert-badge-link" onclick="document.getElementById('csrdModal').classList.add('open')" title="View CSRD Certificate">
+                        <img src="csrd.jpeg" alt="CSRD Fundamentals Badge" class="cert-badge-img">
+                    </button>
+                    <h3>CSRD Fundamentals</h3>
+                    <p class="cert-code">Corporate Sustainability Reporting Directive</p>
+                    <p class="cert-issuer">Certified</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EDUCATION ===== -->
+    <section class="section" id="education">
+        <div class="container">
+            <h2 class="section-heading">Education</h2>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <div class="edu-degree">Master's Degree</div>
+                    <h3>Political Science</h3>
+                    <p class="edu-focus">European &amp; International Governance</p>
+                    <p class="edu-school">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        Vrije Universiteit Brussel (VUB)
+                    </p>
+                </div>
+                <div class="edu-card">
+                    <div class="edu-degree">Bachelor's Degree</div>
+                    <h3>Political Science</h3>
+                    <p class="edu-focus">&nbsp;</p>
+                    <p class="edu-school">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+                        Vrije Universiteit Brussel &amp; Ghent University
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LANGUAGES ===== -->
+    <section class="section section-alt" id="languages">
+        <div class="container">
+            <h2 class="section-heading">Languages</h2>
+            <div class="lang-grid">
+                <div class="lang-card">
+                    <h3>English</h3>
+                    <p>Full Professional</p>
+                    <div class="lang-bar"><div class="lang-fill" style="width:95%"></div></div>
+                </div>
+                <div class="lang-card">
+                    <h3>French</h3>
+                    <p>Full Professional</p>
+                    <div class="lang-bar"><div class="lang-fill" style="width:90%"></div></div>
+                </div>
+                <div class="lang-card">
+                    <h3>Urdu</h3>
+                    <p>Native</p>
+                    <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                </div>
+                <div class="lang-card">
+                    <h3>Punjabi</h3>
+                    <p>Native</p>
+                    <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                </div>
+                <div class="lang-card">
+                    <h3>Persian</h3>
+                    <p>Native</p>
+                    <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                </div>
+                <div class="lang-card">
+                    <h3>Tajik</h3>
+                    <p>Native</p>
+                    <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section class="section" id="contact">
+        <div class="container">
+            <h2 class="section-heading">Let's Connect</h2>
+            <p class="contact-lead">
+                I'm always open to conversations about cloud architecture, career opportunities,
+                and interesting projects. Reach out any time.
+            </p>
+            <div class="contact-row">
+                <!-- Email -->
+                <a href="mailto:muhammadjaffarmahdi@gmail.com" class="contact-tile">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,7 12,13 2,7"/></svg>
+                    <span>muhammadjaffarmahdi@gmail.com</span>
+                </a>
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/muhammadjaffarmahdi" target="_blank" rel="noopener" class="contact-tile">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    <span>linkedin.com/in/muhammadjaffarmahdi</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Syed Muhammad Jaffar Mahdi. Built with purpose.</p>
+        </div>
+    </footer>
+
+    <!-- ===== CERTIFICATE LIGHTBOX MODAL ===== -->
+    <div class="modal-overlay" id="certModal" onclick="this.classList.remove('open')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="document.getElementById('certModal').classList.remove('open')" aria-label="Close">&times;</button>
+            <img src="az900.png" alt="Microsoft Azure Fundamentals AZ-900 Certificate">
+            <p class="modal-caption">Microsoft Certified: Azure Fundamentals (AZ-900)</p>
+        </div>
+    </div>
+
+    <!-- ===== CSRD CERTIFICATE LIGHTBOX MODAL ===== -->
+    <div class="modal-overlay" id="csrdModal" onclick="this.classList.remove('open')">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button class="modal-close" onclick="document.getElementById('csrdModal').classList.remove('open')" aria-label="Close">&times;</button>
+            <img src="csrd.jpeg" alt="CSRD Fundamentals Certificate">
+            <p class="modal-caption">CSRD Fundamentals — Corporate Sustainability Reporting Directive</p>
+        </div>
+    </div>
+
+    <!-- JavaScript — smooth scroll, nav effects, scroll animations -->
+    <script src="script.js"></script>
+</body>
+</html>

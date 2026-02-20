@@ -407,10 +407,80 @@ function initHeroAnimation() {
     });
 }
 
+// ─── Typing effect on hero headline ───
+function initTypingEffect() {
+    const headline = document.getElementById('heroHeadline');
+    if (!headline) return;
+    const fullHTML = headline.innerHTML;
+    // Parse the text nodes for typing (preserve <br>)
+    const parts = fullHTML.split(/<br\s*\/?>/i);
+    const totalText = parts.join('');
+    const totalLen = totalText.length;
+
+    headline.innerHTML = '';
+    const cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    headline.appendChild(cursor);
+
+    let charIndex = 0;
+    let partIndex = 0;
+    let partCharIndex = 0;
+
+    function typeNext() {
+        if (partIndex >= parts.length) {
+            // Done typing — blink cursor a few times then hide
+            setTimeout(() => cursor.classList.add('done'), 400);
+            setTimeout(() => { if (cursor.parentNode) cursor.remove(); }, 2800);
+            return;
+        }
+        const currentPart = parts[partIndex];
+        if (partCharIndex < currentPart.length) {
+            cursor.before(document.createTextNode(currentPart[partCharIndex]));
+            partCharIndex++;
+            charIndex++;
+        } else {
+            // Move to next part (add <br>)
+            partIndex++;
+            partCharIndex = 0;
+            if (partIndex < parts.length) {
+                cursor.before(document.createElement('br'));
+            }
+            typeNext();
+            return;
+        }
+        // Variable speed: faster in the middle
+        const speed = charIndex < 3 ? 100 : charIndex > totalLen - 3 ? 100 : 55;
+        setTimeout(typeNext, speed);
+    }
+
+    // Delay start until hero fades in
+    setTimeout(typeNext, 900);
+}
+
+// ─── Back to top button ───
+function initBackToTop() {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('visible', window.scrollY > 500);
+    });
+    btn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+}
+
+// ─── Page fade-in ───
+function initPageFadeIn() {
+    document.body.classList.remove('page-loading');
+}
+
 // ─── Init ───
 document.addEventListener('DOMContentLoaded', () => {
+    initPageFadeIn();
     initReveal();
     initLanguageBars();
     initStagger();
     initHeroAnimation();
+    initTypingEffect();
+    initBackToTop();
 });

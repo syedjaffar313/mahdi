@@ -71,7 +71,10 @@ body {
     line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    opacity: 1;
+    transition: opacity .5s ease;
 }
+body.page-loading { opacity: 0; }
 a { text-decoration: none; color: inherit; }
 ul, ol { list-style: none; }
 img { max-width: 100%; display: block; }
@@ -233,6 +236,25 @@ strong { font-weight: 600; }
     letter-spacing: -.02em;
     color: var(--ink);
     margin-bottom: 20px;
+}
+
+/* Typing cursor */
+.typing-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: var(--accent);
+    margin-left: 4px;
+    vertical-align: text-bottom;
+    animation: blink .7s step-end infinite;
+}
+@keyframes blink {
+    50% { opacity: 0; }
+}
+.typing-cursor.done {
+    animation: blink .7s step-end 3;
+    animation-fill-mode: forwards;
+    opacity: 0;
 }
 
 .hero-sub {
@@ -636,6 +658,36 @@ strong { font-weight: 600; }
     transition: opacity .7s var(--ease), transform .7s var(--ease);
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* ============================================
+   BACK TO TOP
+   ============================================ */
+.back-to-top {
+    position: fixed; bottom: 32px; right: 32px;
+    z-index: 900;
+    width: 46px; height: 46px;
+    border-radius: 50%; border: 1px solid var(--border);
+    background: var(--bg);
+    color: var(--ink-2);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    opacity: 0; transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity var(--dur), transform var(--dur), color var(--dur), border-color var(--dur), background var(--dur);
+}
+.back-to-top.visible {
+    opacity: 1; transform: translateY(0);
+    pointer-events: auto;
+}
+.back-to-top:hover {
+    color: var(--accent); border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .back-to-top { bottom: 20px; right: 20px; width: 40px; height: 40px; }
+}
 
 /* ============================================
    RESPONSIVE
