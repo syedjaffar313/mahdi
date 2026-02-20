@@ -22,9 +22,11 @@ const translations = {
         'hero.readmore': 'Read More \u2193',
 
         'about.label': 'About',
-        'about.p1': '<strong>Cloud Solution Architect Intern at Microsoft</strong> with an interest in cloud infrastructure, governance, and resiliency. My background spans enterprise IT and endpoint modernization alongside public\u2011sector policy and digital research, offering a balanced technical and institutional perspective on cloud transformation.',
-        'about.p2': 'Previously worked as a <strong>Policy &amp; Digital Research Intern at the National Assembly of Pakistan</strong>, contributing to an electric vehicle policy proposal through Excel\u2011based modelling and supporting citizen engagement digitization initiatives focused on data\u2011driven decision\u2011making and governance frameworks.',
-        'about.p3': 'Earlier experience as a <strong>television presenter and sports analyst</strong>, including coverage of the FIFA World Cup, shaped a strong ability to communicate complex topics clearly to diverse audiences. Passionate about helping organizations modernize infrastructure, strengthen security posture, and make confident, informed decisions throughout their cloud journey.',
+        'about.p1': 'Currently a <strong>Cloud Solution Architect Intern at Microsoft</strong>, focused on cloud infrastructure, governance, and resiliency, designing modern platforms that are secure, scalable, and dependable from day one.',
+        'about.p2': 'My background spans enterprise IT provisioning and modernization projects at <strong>Allianz Trade</strong> and <strong>Bridgestone</strong>, where I worked on endpoint provisioning, deployment workflows, and operational stability, gaining hands\u2011on exposure to how infrastructure decisions affect real users, operations, and security.',
+        'about.p3': 'Alongside my technical work, I have a strong interest in political science, geopolitics, and public policy, with experience in <strong>policy and digital research at the National Assembly of Pakistan</strong>, contributing to electric vehicle policy proposals, data modelling, and citizen engagement digitization initiatives. This perspective shapes how I think about technology within institutional, regulatory, and societal contexts.',
+        'about.p4': 'Before moving into technology, I worked as a <strong>television presenter and sports analyst</strong> on national television, delivering over 100 live broadcasts including coverage of the FIFA World Cup. This experience strengthened my ability to communicate clearly, stay composed, and translate complex ideas for diverse audiences.',
+        'about.p5': 'In my free time, I enjoy travelling, reading, and exploring new perspectives. I stay curious, intentional, and open\u2011minded, focused on building thoughtful and resilient solutions in the cloud.',
         'about.card1.title': 'Focus Area',
         'about.card1.desc': 'Cloud Infrastructure & Governance',
         'about.card2.title': 'Education',
@@ -128,9 +130,11 @@ const translations = {
         'hero.readmore': 'En savoir plus \u2193',
 
         'about.label': '\u00C0 propos',
-        'about.p1': '<strong>Stagiaire Architecte Solutions Cloud chez Microsoft</strong> avec un int\u00E9r\u00EAt pour l\u2019infrastructure cloud, la gouvernance et la r\u00E9silience. Mon parcours combine l\u2019informatique d\u2019entreprise et la modernisation des postes de travail avec la politique du secteur public et la recherche num\u00E9rique, offrant une perspective \u00E9quilibr\u00E9e entre technique et institutionnel sur la transformation cloud.',
-        'about.p2': 'Pr\u00E9c\u00E9demment <strong>Stagiaire en Politiques & Recherche Num\u00E9rique \u00E0 l\u2019Assembl\u00E9e Nationale du Pakistan</strong>, j\u2019ai contribu\u00E9 \u00E0 une proposition de politique sur les v\u00E9hicules \u00E9lectriques \u00E0 l\u2019aide de mod\u00E9lisations Excel et soutenu des initiatives de num\u00E9risation de l\u2019engagement citoyen ax\u00E9es sur la prise de d\u00E9cision fond\u00E9e sur les donn\u00E9es.',
-        'about.p3': 'Mon exp\u00E9rience ant\u00E9rieure en tant que <strong>pr\u00E9sentateur t\u00E9l\u00E9vis\u00E9 et analyste sportif</strong>, y compris la couverture de la Coupe du Monde FIFA, a d\u00E9velopp\u00E9 une forte capacit\u00E9 \u00E0 communiquer des sujets complexes \u00E0 des publics divers. Passionn\u00E9 par l\u2019aide aux organisations pour moderniser leur infrastructure et prendre des d\u00E9cisions \u00E9clair\u00E9es dans leur parcours cloud.',
+        'about.p1': 'Actuellement <strong>Stagiaire Architecte Solutions Cloud chez Microsoft</strong>, sp\u00E9cialis\u00E9 dans l\u2019infrastructure cloud, la gouvernance et la r\u00E9silience, concevant des plateformes modernes qui sont s\u00E9curis\u00E9es, \u00E9volutives et fiables d\u00E8s le d\u00E9part.',
+        'about.p2': 'Mon parcours comprend des projets de provisionnement et de modernisation IT chez <strong>Allianz Trade</strong> et <strong>Bridgestone</strong>, o\u00F9 j\u2019ai travaill\u00E9 sur le provisionnement des postes de travail, les flux de d\u00E9ploiement et la stabilit\u00E9 op\u00E9rationnelle, acquérant une exp\u00E9rience concr\u00E8te de l\u2019impact des d\u00E9cisions d\u2019infrastructure sur les utilisateurs, les op\u00E9rations et la s\u00E9curit\u00E9.',
+        'about.p3': 'Parall\u00E8lement \u00E0 mon travail technique, je m\u2019int\u00E9resse fortement aux sciences politiques, \u00E0 la g\u00E9opolitique et aux politiques publiques, avec une exp\u00E9rience en <strong>politique et recherche num\u00E9rique \u00E0 l\u2019Assembl\u00E9e Nationale du Pakistan</strong>, contribuant \u00E0 des propositions de politique sur les v\u00E9hicules \u00E9lectriques, la mod\u00E9lisation de donn\u00E9es et des initiatives de num\u00E9risation de l\u2019engagement citoyen. Cette perspective fa\u00E7onne ma r\u00E9flexion sur la technologie dans des contextes institutionnels, r\u00E9glementaires et soci\u00E9taux.',
+        'about.p4': 'Avant de me tourner vers la technologie, j\u2019ai travaill\u00E9 comme <strong>pr\u00E9sentateur t\u00E9l\u00E9vis\u00E9 et analyste sportif</strong> sur la t\u00E9l\u00E9vision nationale, animant plus de 100 \u00E9missions en direct, y compris la couverture de la Coupe du Monde FIFA. Cette exp\u00E9rience a renforc\u00E9 ma capacit\u00E9 \u00E0 communiquer clairement, rester compos\u00E9 et traduire des id\u00E9es complexes pour des publics divers.',
+        'about.p5': 'Pendant mon temps libre, j\u2019aime voyager, lire et d\u00E9couvrir de nouvelles perspectives. Je reste curieux, intentionnel et ouvert d\u2019esprit, concentr\u00E9 sur la construction de solutions r\u00E9fl\u00E9chies et r\u00E9silientes dans le cloud.',
         'about.card1.title': 'Domaine',
         'about.card1.desc': 'Infrastructure Cloud & Gouvernance',
         'about.card2.title': 'Formation',
@@ -246,7 +250,7 @@ const langToggle = document.getElementById('langToggle');
 const langLabel  = langToggle.querySelector('.lang-label');
 
 // Keys whose values contain HTML
-const htmlKeys = new Set(['about.p1', 'about.p2', 'about.p3', 'rec.quote']);
+const htmlKeys = new Set(['about.p1', 'about.p2', 'about.p3', 'about.p4', 'about.p5', 'rec.quote']);
 
 function setLanguage(lang) {
     const dict = translations[lang];
@@ -407,56 +411,6 @@ function initHeroAnimation() {
     });
 }
 
-// ─── Typing effect on hero headline ───
-function initTypingEffect() {
-    const headline = document.getElementById('heroHeadline');
-    if (!headline) return;
-    const fullHTML = headline.innerHTML;
-    // Parse the text nodes for typing (preserve <br>)
-    const parts = fullHTML.split(/<br\s*\/?>/i);
-    const totalText = parts.join('');
-    const totalLen = totalText.length;
-
-    headline.innerHTML = '';
-    const cursor = document.createElement('span');
-    cursor.className = 'typing-cursor';
-    headline.appendChild(cursor);
-
-    let charIndex = 0;
-    let partIndex = 0;
-    let partCharIndex = 0;
-
-    function typeNext() {
-        if (partIndex >= parts.length) {
-            // Done typing — blink cursor a few times then hide
-            setTimeout(() => cursor.classList.add('done'), 400);
-            setTimeout(() => { if (cursor.parentNode) cursor.remove(); }, 2800);
-            return;
-        }
-        const currentPart = parts[partIndex];
-        if (partCharIndex < currentPart.length) {
-            cursor.before(document.createTextNode(currentPart[partCharIndex]));
-            partCharIndex++;
-            charIndex++;
-        } else {
-            // Move to next part (add <br>)
-            partIndex++;
-            partCharIndex = 0;
-            if (partIndex < parts.length) {
-                cursor.before(document.createElement('br'));
-            }
-            typeNext();
-            return;
-        }
-        // Variable speed: faster in the middle
-        const speed = charIndex < 3 ? 100 : charIndex > totalLen - 3 ? 100 : 55;
-        setTimeout(typeNext, speed);
-    }
-
-    // Delay start until hero fades in
-    setTimeout(typeNext, 900);
-}
-
 // ─── Back to top button ───
 function initBackToTop() {
     const btn = document.getElementById('backToTop');
@@ -481,6 +435,5 @@ document.addEventListener('DOMContentLoaded', () => {
     initLanguageBars();
     initStagger();
     initHeroAnimation();
-    initTypingEffect();
     initBackToTop();
 });
